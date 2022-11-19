@@ -25,17 +25,28 @@ function convertBase() {
   document.getElementById('orignum').innerHTML = num; 
   document.getElementById('resultbase').innerHTML = base;
   
-  while (num != 0) {
-    remainder = num % base;
+  var quotient = num;
+  
+  if (quotient < 0 && !neg) {
+    quotient = -quotient;
+  }
+
+  while (quotient != 0) {
+    remainder = quotient % base;
     if (remainder < 0) {
       remainder -= base;
     }
     result = digits[remainder] + result;
     if (neg) {
-      num = Math.ceil(num / base);
+      quotient = Math.ceil(quotient / base);
     } else {
-      num = Math.floor(num / base);
+      quotient = Math.floor(quotient / base);
     }
+  }
+  
+  if (num < 0 && !neg) {
+    num = -num;
+    result = "-" + result;
   }
   
   document.getElementById('resultnum').innerHTML = result;
