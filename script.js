@@ -1,11 +1,15 @@
 function convertBase(num, neg, base) {
-  console.log("num: " + num + ", neg: " + neg + ", base: " + base);
+  var presult = document.getElementById("result");
+  
   var digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var result = "";
   
   if (neg) {
     base = -base
   }
+  
+  document.getElementById('orignum').innerHTML = num; 
+  document.getElementById('resultbase').innerHTML = base;
   
   console.log("base: " + base);
   while (num != 0) {
@@ -22,5 +26,6 @@ function convertBase(num, neg, base) {
     }
     console.log("num: " + num);
   }
+  
   return result;
 }
