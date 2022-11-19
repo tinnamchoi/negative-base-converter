@@ -4,15 +4,9 @@
 
 <head>
   <title>Negative Base Converter</title>
-  <link rel="stylesheet" href="https://tinnamchoi.github.io/styles.css">
+  <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="script.js"></script>
-  <style>
-    .footer {
-      position: fixed;
-      bottom: 1em;
-    }
-  </style>
 </head>
 
 <body>
@@ -22,18 +16,18 @@
   Negative base: <input type="checkbox" id="neg" /><br />
   Base: <input type="number" id="base" /><br /><br />
 
-  <button onclick="convertBase()">Convert</button>
+  <button onclick="convertBase()">convert</button>
 
   <p id="error"></p>
   <p id="result" style="display:none;"><span id="orignum"></span><sub>10</sub>
   = <span id="resultnum"></span><sub id="resultbase"></sub></p>
 
-  <div class="footer">
+  <footer>
     Created by <a href="https://tinnamchoi.github.io">Timothy Choi</a> •
     <a href="https://github.com/tinnamchoi/negative-base-converter">source</a> •
     <a href="https://www.paypal.com/donate/?business=2CA83VF7XNUWW&no_recurring=0&currency_code=HKD">donations</a> •
     <a href="index.html">back to home</a>
-  </div>
+  </footer>
 </body>
 
 </html>
