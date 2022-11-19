@@ -1,4 +1,8 @@
-function convertBase(num, neg, base) {
+function convertBase() {
+  var num = document.getElementById('num').value;
+  var neg = document.getElementById('neg').checked
+  var base = document.getElementById('base').value;
+  
   var presult = document.getElementById("result");
   var perror = document.getElementById("error");
   
@@ -21,12 +25,10 @@ function convertBase(num, neg, base) {
   document.getElementById('orignum').innerHTML = num; 
   document.getElementById('resultbase').innerHTML = base;
   
-  console.log("base: " + base);
   while (num != 0) {
     remainder = num % base;
     if (remainder < 0) {
       remainder -= base;
-      console.log("remainder: " + remainder);
     }
     result = digits[remainder] + result;
     if (neg) {
@@ -34,8 +36,7 @@ function convertBase(num, neg, base) {
     } else {
       num = Math.floor(num / base);
     }
-    console.log("num: " + num);
   }
   
-  return result;
+  document.getElementById('resultnum').innerHTML = result;
 }
