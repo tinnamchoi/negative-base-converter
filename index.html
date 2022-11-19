@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Negative Base Converter</title>
+  <link rel="stylesheet" href="https://tinnamchoi.github.io/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <h1>Base converter</h1>
+  Number to convert: <input type="number" id="num" /> <br />
+  Negative: <input type="checkbox" id="checkbox" /> <br />
+  Base: <input type="number" id="base" /> <br /> <br />
+  <button
+    onclick="document.getElementById('result').innerHTML = convertBase(document.getElementById('num').value, document.getElementById('checkbox').checked, document.getElementById('base').value)">Convert</button>
+  <p id="result"></p>
+</body>
+
+</html>
