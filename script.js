@@ -51,3 +51,18 @@ function convertBase() {
   
   document.getElementById('resultnum').innerHTML = result;
 }
+
+function nary() {
+  var base = document.getElementById('base').value;
+  var neg = document.getElementById('neg').checked;
+  
+  // array of strings for names of bases
+  var bases = ["binary", "ternary", "quaternary", "quinary", "senary", "septenary", "octal", "nonary", "decimal", "undecimal", "duodecimal", "tridecimal", "tetradecimal", "pentadecimal", "hexadecimal"];
+  
+  if (base >= 2 && base <= 16) {
+    document.getElementById('nary').innerHTML = (neg ? "nega-" : "") + bases[base - 2] + " places: ";
+    return null;
+  }
+  
+  document.getElementById('nary').innerHTML = (neg - 0.5) * -2 * base + "-ary places: ";
+}

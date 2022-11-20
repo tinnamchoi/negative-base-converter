@@ -6,21 +6,28 @@
   <title>Negative Base Converter</title>
   <link rel="stylesheet" href="https://tinnamchoi.github.io/styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    div.row span{position: absolute;}
+    div.row span:nth-child(1){left: 8px;}
+    div.row span:nth-child(2){left: 256px;}
+  </style>
   <script src="script.js"></script>
 </head>
 
 <body>
   <h1>Negative Base Converter</h1>
 
-  Number to convert: <input type="number" id="num" /><br />
-  Negative base: <input type="checkbox" id="neg" /><br />
-  Base: <input type="number" id="base" /><br /><br />
+  <div class="row"><span>Number to convert:</span>      <span><input type="number" id="num" /></span>                                         </div><br />
+  <div class="row"><span id="nary">N-ary places:</span> <span><input type="number" style="width: 64px;" /></span>                             </div><br /><br />
+  
+  <div class="row"><span>Negative base:</span>          <span><input type="checkbox" id="neg" onchange="nary()" /></span>                     </div><br />
+  <div class="row"><span>Base:</span>                   <span><input type="number" id="base" onchange="nary()" style="width: 64px;" /></span> </div><br /><br />
 
   <button onclick="convertBase()">convert</button>
 
-  <p id="error"></p>
-  <p id="result" style="display:none;"><span id="orignum"></span><sub>10</sub>
-  = <span id="resultnum"></span><sub id="resultbase"></sub></p>
+  <p id="error" style="display:none;"></p>
+  <p id="result" style="display:none;"><span id="orignum" class="highlight"></span><sub>10</sub>
+  = <span id="resultnum" class="highlight"></span><sub id="resultbase"></sub></p>
 
   <footer>
     Created by <a href="https://github.com/tinnamchoi">Timothy Choi</a> •
