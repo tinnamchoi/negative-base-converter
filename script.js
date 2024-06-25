@@ -3,11 +3,18 @@ function convertBase() {
   var neg = document.getElementById('neg').checked
   var base = document.getElementById('base').value;
   
-  var presult = document.getElementById("result");
+  var psuccess = document.getElementById("success");
   var perror = document.getElementById("error");
   
+  if (!Number.isInteger(Number(num))) {
+    psuccess.style.display = "none";
+    perror.innerHTML = "Error: Number must be an integer";
+    perror.style.display = "block";
+    return null;
+  }
+  
   if (base < 2 || base > 36) {
-    presult.style.display = "none";
+    psuccess.style.display = "none";
     perror.innerHTML = "Error: Base must be between 2 and 36";
     perror.style.display = "block";
     return null;
@@ -21,7 +28,7 @@ function convertBase() {
   }
   
   perror.style.display = "none";
-  presult.style.display = "block";
+  psuccess.style.display = "block";
   document.getElementById('orignum').innerHTML = num; 
   document.getElementById('resultbase').innerHTML = base;
   
